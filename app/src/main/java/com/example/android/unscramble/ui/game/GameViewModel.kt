@@ -6,6 +6,8 @@ import androidx.lifecycle.ViewModel
 class GameViewModel : ViewModel() {
 
     private var score = 0
+    val score: Int
+        get() = _score
     private var currentWordCount = 0
     private lateinit var _currentScrambledWord: String
     val currentScrambledWord: String
