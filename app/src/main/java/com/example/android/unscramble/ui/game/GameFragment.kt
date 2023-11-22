@@ -28,6 +28,7 @@ import com.example.android.unscramble.R
 import com.example.android.unscramble.databinding.GameFragmentBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
+
 /**
  * Fragment where the game is played, contains the game logic.
  */
@@ -35,9 +36,9 @@ class GameFragment : Fragment() {
 
     //private val viewModel = GameViewModel() - не так
     private val viewModel: GameViewModel by viewModels()
-
-    // Binding object instance with access to the views in the game_fragment.xml layout
     private lateinit var binding: GameFragmentBinding
+    // Binding object instance with access to the views in the game_fragment.xml layout
+
 
     // Create a ViewModel the first time the fragment is created.
     // If the fragment is re-created, it receives the same GameViewModel instance created by the
