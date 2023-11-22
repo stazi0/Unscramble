@@ -61,8 +61,14 @@ class GameFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.gameViewModel = viewModel
+        binding.maxNoOfWords = MAX_NO_OF_WORDS
+
         binding.submit.setOnClickListener { onSubmitWord() }
         binding.skip.setOnClickListener { onSkipWord() }
+
+        binding.lifecycleOwner = viewLifecycleOwner
+
         viewModel.score.observe(viewLifecycleOwner,
             { newScore ->
                 binding.score.text = getString(R.string.score, newScore)
@@ -75,6 +81,7 @@ class GameFragment : Fragment() {
         viewModel.currentScrambledWord.observe(viewLifecycleOwner,
             { newWord -> binding.textViewUnscrambledWord.text = newWord
             })
+
     }
 
     /*
